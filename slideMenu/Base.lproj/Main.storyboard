@@ -98,7 +98,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger" id="eUK-1P-VBR">
                             <color key="tintColor" red="1" green="0.41044730610000002" blue="0.40582336870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="showSideMenu:" destination="MRZ-Fq-0Y3" id="CnE-W8-T5J"/>
+                                <action selector="sideMenuButtonTapped:" destination="MRZ-Fq-0Y3" id="5Pd-c1-v6s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

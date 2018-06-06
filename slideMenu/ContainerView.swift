@@ -8,18 +8,16 @@
 
 import UIKit
 
-protocol ContainerViewDelegate: class {
-    func unhideSideMenu()
-}
+
 class ContainerView: UIViewController {
     
-    weak var delegate: ContainerViewDelegate?
+    var onCompletion: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func showSideMenu(_ sender: UIBarButtonItem) {
-        delegate?.unhideSideMenu()
+    @IBAction func sideMenuButtonTapped(_ sender: Any) {
+        onCompletion?()
     }
-    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, ContainerViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var slideViewLeading: NSLayoutConstraint!
     @IBOutlet weak var slideView: UIView!
@@ -27,7 +27,6 @@ class ViewController: UIViewController, ContainerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         slideMenuIsVisible = false
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +35,12 @@ class ViewController: UIViewController, ContainerViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //MARK: step 5 create a reference of Class B and bind them through the prepareforsegue method
-        if let nav = segue.destination as? UINavigationController, let containerView = nav.topViewController as? ContainerView {
-            containerView.delegate = self
+        if segue.identifier == "container" {
+            let containerView = (segue.destination as? UINavigationController)?.topViewController as? ContainerView
+            containerView?.onCompletion = {
+                self.slideMenuIsVisible = !self.slideMenuIsVisible
+            }
         }
-    }
-    
-    func unhideSideMenu() {
-        slideMenuIsVisible = !slideMenuIsVisible
     }
     @IBAction func hideSlideMenu(_ sender: UIButton) {
         slideMenuIsVisible = !slideMenuIsVisible
