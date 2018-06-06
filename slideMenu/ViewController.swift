@@ -16,17 +16,11 @@ class ViewController: UIViewController, ContainerViewDelegate {
     
     var slideMenuIsVisible = false {
         didSet {
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-                if self.slideMenuIsVisible {
-                    self.slideViewLeading.constant = 0
-                    self.hiddenButton.alpha = 1
-                } else {
-                    self.hiddenButton.alpha = 0
-                    self.slideViewLeading.constant = -(2 * self.slideView.frame.width)
-                }
+            
+            UIView.animate(withDuration: 0.35) {
+                self.slideViewLeading.constant = self.slideMenuIsVisible ? 0 : -(2 * self.slideView.frame.width)
+                self.hiddenButton.alpha = self.slideMenuIsVisible ? 1 : 0
                 self.view.layoutIfNeeded()
-            }) { (animationCompletet) in
-                
             }
         }
     }
