@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ContainerViewDelegate {
 
     @IBOutlet weak var slideViewLeading: NSLayoutConstraint!
     @IBOutlet weak var slideView: UIView!
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
                 if self.slideMenuIsVisible {
                     self.slideViewLeading.constant = 0
-                    self.hiddenButton.alpha = 1 
+                    self.hiddenButton.alpha = 1
                 } else {
                     self.hiddenButton.alpha = 0
                     self.slideViewLeading.constant = -(2 * self.slideView.frame.width)
@@ -40,13 +40,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //MARK: step 5 create a reference of Class B and bind them through the prepareforsegue method
+        if let nav = segue.destination as? UINavigationController, let containerView = nav.topViewController as? ContainerView {
+            containerView.delegate = self
+        }
+    }
+    
+    func unhideSideMenu() {
+        slideMenuIsVisible = !slideMenuIsVisible
+    }
     @IBAction func hideSlideMenu(_ sender: UIButton) {
         slideMenuIsVisible = !slideMenuIsVisible
     }
-    
-    @IBAction func hamburgerButtonTapped(_ sender: UIBarButtonItem) {
-        slideMenuIsVisible = !slideMenuIsVisible
-    }
-    
 }
 

@@ -13,6 +13,7 @@
 		4E6D219B20C2580700F5B646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D219A20C2580700F5B646 /* Assets.xcassets */; };
 		4E6D219E20C2580700F5B646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D219C20C2580700F5B646 /* LaunchScreen.storyboard */; };
 		4E6D21A920C2580800F5B646 /* slideMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D21A820C2580800F5B646 /* slideMenuTests.swift */; };
+		85F92C0120C7C86300D5293F /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F92C0020C7C86300D5293F /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		4E6D21A420C2580800F5B646 /* slideMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = slideMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6D21A820C2580800F5B646 /* slideMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slideMenuTests.swift; sourceTree = "<group>"; };
 		4E6D21AA20C2580800F5B646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85F92C0020C7C86300D5293F /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				4E6D219320C2580700F5B646 /* AppDelegate.swift */,
 				4E6D219520C2580700F5B646 /* ViewController.swift */,
+				85F92C0020C7C86300D5293F /* ContainerView.swift */,
 				4E6D219720C2580700F5B646 /* Main.storyboard */,
 				4E6D219A20C2580700F5B646 /* Assets.xcassets */,
 				4E6D219C20C2580700F5B646 /* LaunchScreen.storyboard */,
@@ -201,6 +204,7 @@
 			files = (
 				4E6D219620C2580700F5B646 /* ViewController.swift in Sources */,
 				4E6D219420C2580700F5B646 /* AppDelegate.swift in Sources */,
+				85F92C0120C7C86300D5293F /* ContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
